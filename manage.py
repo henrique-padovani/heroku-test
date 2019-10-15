@@ -19,4 +19,4 @@ api = Api(app)
 api.add_resource(WhatsApp, '/wpp')
 api.add_resource(NoRoute, '/')
 
-app.run(debug=True, use_reloader=False, host='0.0.0.0')
+app.run(debug=True, use_reloader=False, host='0.0.0.0:5000')
