@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api
-
+from os import environ
 
 
 class WhatsApp(Resource):
@@ -19,4 +19,4 @@ api = Api(app)
 api.add_resource(WhatsApp, '/wpp')
 api.add_resource(NoRoute, '/')
 
-app.run(debug=True, use_reloader=False)
+app.run(debug=True, use_reloader=False, port=environ.get("PORT", 5000), host='0.0.0.0')
